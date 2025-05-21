@@ -1,0 +1,72 @@
+version: 5.7.5
+session: 682e62822856e2eb4066367d
+steps:
+  - prompt: open a new tab in chrome by pressing command + t
+    commands:
+      - command: press-keys
+        keys:
+          - command
+          - t
+  - prompt: type chromewebstore.google.com and press enter
+    commands:
+      - command: type
+        text: chromewebstore.google.com
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: >-
+      hover over Search extensions and themes then click. Type Odoo debug and
+      press enter
+    commands:
+      - command: hover-text
+        text: Search extensions and themes
+        description: search input in the Chrome Web Store
+        action: click
+      - command: type
+        text: ${TD_EXTENSION_NAME}
+      - command: press-keys
+        keys:
+          - down
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: click Add to Chrome
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Add to Chrome
+        description: button to add the extension to Chrome
+        action: click
+  - prompt: click Add extension
+    commands:
+      - command: hover-text
+        text: Add extension
+        description: button to confirm adding the extension
+        action: click
+  - prompt: click the x icon to close the popup
+    commands:
+      - command: press-keys
+        keys:
+          - tab
+      - command: press-keys
+        keys:
+          - space
+  - prompt: >-
+      click the puzzle piece icon in the chrome extension toolbar. Click the pin
+      icon next to the Odoo debug extension
+    commands:
+      - command: hover-image
+        description: puzzle piece icon in the Chrome toolbar
+        action: click
+      - command: hover-image
+        text: Odoo Debug
+        description: pushpin icon in the chrome extension popup
+        action: click
+  - prompt: use command + w to close the chrome webstore tab
+    commands:
+      - command: press-keys
+        keys:
+          - command
+          - w
+
