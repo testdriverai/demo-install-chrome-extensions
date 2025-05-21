@@ -1,8 +1,8 @@
 ![TestDriver.ai](https://github.com/dashcamio/testdriver/assets/318295/2a0ad981-8504-46f0-ad97-60cb6c26f1e7)
 
-# TestDriver.ai Web Quickstart
+# Using TestDriver to Install Chrome Extensions
 
-See [Docs](https://docs.testdriver.ai/overview/quickstart)
+See [TestDriver Quickstart](https://docs.testdriver.ai/overview/quickstart)
 
 ---
 
