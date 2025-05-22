@@ -62,4 +62,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
-          TD_WEBSITE: "https://testdriver.ai"
+          TD_WEBSITE: "google.com"
+          TD_EXTENSION_NAME: "ColorZilla"

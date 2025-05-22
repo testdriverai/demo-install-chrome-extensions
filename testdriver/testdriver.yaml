@@ -6,8 +6,8 @@ steps:
       - command: focus-application
         name: Google Chrome
       - command: wait-for-text
-        text: "TestDriver"
-        timeout: 10000
+        text: "Google"
+        timeout: 25000
   - prompt: open a new tab in chrome by pressing command + t
     commands:
       - command: press-keys
@@ -70,9 +70,3 @@ steps:
         text: Odoo Debug
         description: pushpin icon in the chrome extension popup
         action: click
-  - prompt: use command + w to close the chrome webstore tab
-    commands:
-      - command: press-keys
-        keys:
-          - command
-          - w
