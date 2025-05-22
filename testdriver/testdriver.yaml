@@ -61,12 +61,12 @@ steps:
           - space
   - prompt: >-
       click the puzzle piece icon in the chrome extension toolbar. Click the pin
-      icon next to the Odoo debug extension
+      icon next to the ${TD_EXTENSION_NAME} extension
     commands:
       - command: hover-image
         description: puzzle piece icon in the Chrome toolbar
         action: click
       - command: hover-image
-        text: Odoo Debug
+        text: ${TD_EXTENSION_NAME}
         description: pushpin icon in the chrome extension popup
         action: click
