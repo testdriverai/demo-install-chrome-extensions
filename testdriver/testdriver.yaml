@@ -1,6 +1,13 @@
 version: 5.7.5
 session: 682e62822856e2eb4066367d
 steps:
+  - prompt: wait for text Google, then focus Chrome
+    commands:
+      - command: wait-text
+        text: Google
+        timeout: 25000
+      - command: focus-application
+        name: Google Chrome
   - prompt: open a new tab in chrome by pressing control + t
     commands:
       - command: press-keys
