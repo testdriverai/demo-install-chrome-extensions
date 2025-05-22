@@ -8,12 +8,7 @@ steps:
         timeout: 25000
       - command: focus-application
         name: Google Chrome
-  - prompt: open a new tab in chrome by pressing control + t
-    commands:
-      - command: press-keys
-        keys:
-          - control
-          - t
+  - prompt: open a new tab in chrome
   - prompt: type chromewebstore.google.com and press enter
     commands:
       - command: type
