@@ -1,11 +1,11 @@
 version: 5.7.5
 session: 682e62822856e2eb4066367d
 steps:
-  - prompt: open a new tab in chrome by pressing command + t
+  - prompt: open a new tab in chrome by pressing control + t
     commands:
       - command: press-keys
         keys:
-          - command
+          - control
           - t
   - prompt: type chromewebstore.google.com and press enter
     commands:
