@@ -49,7 +49,6 @@ jobs:
       - uses: testdriverai/action@main
         with:
           os: ${{ contains(matrix.os, 'windows') && 'windows' || 'linux' }}
-          version: "5.7.5"
           prerun: |
             cd $env:TEMP
             npm init -y
