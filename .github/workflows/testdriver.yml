@@ -12,7 +12,7 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *" 
+    - cron: "0 0 * * *"
 
 jobs:
   gather-test-files:
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [linux, windows]
+        os: [windows] # the runner OS
         test: ${{ fromJson(needs.gather-test-files.outputs.test_files) }}
       fail-fast: false
     name: ${{ matrix.os }} - ${{ matrix.test }}
@@ -49,13 +49,17 @@ jobs:
       - uses: testdriverai/action@main
         with:
           os: ${{ contains(matrix.os, 'windows') && 'windows' || 'linux' }}
-          version: "5.5.5"
+          version: "5.7.5"
           prerun: |
+            cd $env:TEMP
+            npm init -y
+            npm install dashcam-chrome
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized", "--no-default-browser-check", "--no-first-run", "--disable-features=PasswordManagerEnabled", "--load-extension=$(pwd)/node_modules/dashcam-chrome/build", ${{ env.TD_WEBSITE }}
             exit
           key: ${{ secrets.TESTDRIVER_API_KEY }}
-          prompt: | 
+          prompt: |
             1. /run testdriver/${{ matrix.test }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
-          WEBSITE_URL: "example.com"
+          TD_WEBSITE: "https://testdriver.ai"
