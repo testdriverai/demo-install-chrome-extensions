@@ -63,4 +63,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
           TD_WEBSITE: "google.com"
-          TD_EXTENSION_NAME: "ColorZilla"
+          TD_EXTENSION_NAME: "Video Speed Controller"
